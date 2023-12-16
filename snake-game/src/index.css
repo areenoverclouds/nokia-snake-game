@@ -1,0 +1,28 @@
+body {
+  background-color: #EDCAF0;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nokia-phone {
+  height: 96dvh;
+  margin-bottom: 14px;
+  width: 450px;
+  overflow: hidden;
+  background-color: #3C3D68;
+  border-radius: 100px/200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.top {
+  margin: 20px;
+  height: 40%;
+  width: 80%;
+  background-color: #BABDE2;
+  border-radius: 100px 100px 30px 30px;
+}
