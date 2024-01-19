@@ -4,8 +4,11 @@ import './index.css';
 export default function App() {
 
   return (
-    <div className='nokia-phone'>
-      <div className='top'>
+    <main className='nokia'>
+      <div className='screen'>
+        
+      </div>
+      {/*<div className='top'>
         <div className='holder'>
           <div className='screen'> </div>
           <div className='show-button'> </div>
@@ -31,8 +34,8 @@ export default function App() {
           <div className='num-3'> 9 </div>
           <div className='num-3'> # </div>
         </div>
-      </div>
-    </div>
+      </div>*/}
+    </main>
   )
 }
 

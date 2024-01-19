@@ -1,65 +1,31 @@
 body {
-  background-color: #EDCAF0;
-  height: 100dvh;
-  overflow: hidden;
+	font-family: sans-serif;
+  margin: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100svh;
 }
 
-.nokia-phone {
-  height: 96dvh;
-  margin-bottom: 14px;
-  width: 450px;
-  overflow: hidden;
-  background-color: #3C3D68;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 10%;
-}
-
-.top {
-  height: 55%;
-  width: 99%;
-  background-color: #BABDE2;
-  border-radius: 0 0 70% 70%; 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.holder {
-  height: 85%;
-  width: 90%;
-  background-color: #3C3D68;
-  border-radius: 0 0 40% 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.heading {
-  margin: 2%;
+.nokia {
+	width: 262px;
+	height: 610px;
+	background: url('./Nokia1100.png') no-repeat;
+	background-size: contain;
 }
 
 .screen {
-  height: 70%;
-  width: 85%;
-  margin-top: 7%;
-  background-color: #A4BE3D;
-  border-radius: 20px;
-}
-
-.bottom {
-  display: flex;
-  height:40%;
-  width: 85%;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  position: absolute;
+	left: 50%;
+  top: 29.5%;
+	transform: translateX(-50%);
+	width: 182px;
+	height: 135px;
+	background: #777;
+	border-radius: 5% / 50%;
+	box-shadow: inset -3px 3px 3px rgba(0, 0, 0, 0.15);
+	box-sizing: border-box;
+	padding: 12px 12px 10px 10px;
 }
 
 .col-1 {
