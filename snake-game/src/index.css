@@ -5,6 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100svh;
+  overflow: hidden;
 }
 
 .nokia {
@@ -15,55 +16,103 @@ body {
 }
 
 .screen {
-  position: absolute;
+  position: relative;
 	left: 50%;
-  top: 29.5%;
+  top: 24%;
 	transform: translateX(-50%);
 	width: 182px;
 	height: 135px;
-	background: #777;
+	background: rgb(31, 106, 31);
 	border-radius: 5% / 50%;
 	box-shadow: inset -3px 3px 3px rgba(0, 0, 0, 0.15);
 	box-sizing: border-box;
 	padding: 12px 12px 10px 10px;
+  font-size: 12px;
 }
 
-.col-1 {
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.space {
+  height: 80px;
+  width: 60px;
+  background-color: transparent;
+  position: relative;
+  border: none;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.num-1 {
-  width: 90px; /* Set the width of the egg */
-  height: 50px; /* Set the height of the egg */
-  background: linear-gradient(240deg, #8C92B5 8.87%, #CED2F3 95.56%);
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50% 70% 50% 70% / 50% 70% 50% 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.top {
+  height: 40px;
+  width: 70px;
+  background-color: transparent;
+  position: relative;
+  border: none;
+  top: 37%;
+  left: 27%;
+  transform: translateX(-50%);
 }
 
-.num-2 {
-  width: 90px; /* Set the width of the egg */
-  height: 50px; /* Set the height of the egg */
-  background: linear-gradient(240deg, #8C92B5 8.87%, #CED2F3 95.56%);
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 60% 60% 50% 50% / 40% 40% 70% 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.down {
+  height: 40px;
+  width: 70px;
+  background-color: transparent;
+  position: relative;
+  border: none;
+  top: 51%;
+  transform: translateX(-50%);
 }
 
-.num-3 {
-  width: 90px; /* Set the width of the egg */
-  height: 50px; /* Set the height of the egg */
-  background: linear-gradient(240deg, #8C92B5 8.87%, #CED2F3 95.56%);
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 70% 50% 70% 50% / 70% 50% 70% 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.right {
+  height: 40px;
+  width: 60px;
+  background-color: transparent;
+  position: relative;
+  border: none;
+  top: 44%;
+  transform: translateX(-50%);
+}
+
+.left {
+  height: 40px;
+  width: 60px;
+  background-color: transparent;
+  position: relative;
+  border: none;
+  top: 37%;
+  left: 23%;
+  transform: translateX(-50%);
+}
+
+.playzone {
+  height: 99%;
+  width: 99%;
+  display: grid;
+  grid-template-columns: repeat(18, 8px);
+  grid-template-rows: repeat(12, 8px);
+  width: max-content;
+  gap: 1px;
+  border: 1px solid #111;
+}
+
+.score {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cell {
+  width: 8px;
+  height: 8px;
+}
+
+.food {
+  background-color: red;
+}
+
+.snake {
+  background-color: black;
+}
+
+.snake-head {
+  background-color: black;
+  border-radius: 2px 2px 0 0;
 }
