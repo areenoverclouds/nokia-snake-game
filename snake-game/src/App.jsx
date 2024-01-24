@@ -43,19 +43,22 @@ export default function App() {
 
   return (
     <div className='nokia'>
-      <div className='screen'>
-        {game ? <Game endGame={endGame} /> 
-                    : <div className='menu'>
-                        <div> Snake Game </div>
-                        <p> New Game </p>
-                      </div>
-        }
-      </div>
-      <button className='space' onClick={startGame}></button>
-      <button className='top'></button>
-      <button className='down'></button>
-      <button className='right'></button>
-      <button className='left'></button>
+      {game && <Game endGame={endGame} />}
+      {!game && 
+        <>
+          <div className='screen'>
+             <div className='menu'>
+                <div> Snake Game </div>
+                <p> New Game </p>
+              </div>
+          </div>
+          <button className='space' onClick={startGame}></button>
+          <button className='top'></button>
+          <button className='down'></button>
+          <button className='right'></button>
+          <button className='left'></button>
+        </>
+      }
     </div>
   )
 }

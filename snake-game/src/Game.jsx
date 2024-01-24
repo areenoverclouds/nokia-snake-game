@@ -95,7 +95,7 @@ export default function Game (props) {
     }
     
     function updateDirection(e) {
-        let key = e.code;
+        let key = e.code || e.target.id;
         switch (key) {
             case "ArrowUp":
                 if (direction !== "DOWN") setDirection("UP");
@@ -123,8 +123,17 @@ export default function Game (props) {
     });
 
     return (
-        <div className='playzone'>
-            {renderPlayzone()}
-        </div>
+        <>
+            <div className='screen'>
+                <div className='playzone'>
+                    {renderPlayzone()}
+                </div>
+            </div>
+            <button className='space'></button>
+            <button id="ArrowUp" className='top' onClick={updateDirection}></button>
+            <button id="ArrowDown" className='down' onClick={updateDirection}></button>
+            <button id="ArrowRight" className='right' onClick={updateDirection}></button>
+            <button id="ArrowLeft" className='left' onClick={updateDirection}></button>
+        </>
     )
 }

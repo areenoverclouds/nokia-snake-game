@@ -2,7 +2,7 @@
   "name": "snake-game",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://areenoverclouds.github.io/nokia-snake-game",
+  "homepage": "https://areenoverclouds.github.io/nokia-snake-game/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",

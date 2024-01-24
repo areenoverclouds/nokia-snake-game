@@ -33,7 +33,7 @@ body {
 .space {
   height: 80px;
   width: 60px;
-  background-color: transparent;
+  background-color: black;
   position: relative;
   border: none;
   top: 30%;
@@ -44,7 +44,7 @@ body {
 .top {
   height: 40px;
   width: 70px;
-  background-color: transparent;
+  background-color: green;
   position: relative;
   border: none;
   top: 37%;
@@ -55,7 +55,7 @@ body {
 .down {
   height: 40px;
   width: 70px;
-  background-color: transparent;
+  background-color: blue;
   position: relative;
   border: none;
   top: 51%;
@@ -65,7 +65,7 @@ body {
 .right {
   height: 40px;
   width: 60px;
-  background-color: transparent;
+  background-color: pink;
   position: relative;
   border: none;
   top: 44%;
@@ -75,7 +75,7 @@ body {
 .left {
   height: 40px;
   width: 60px;
-  background-color: transparent;
+  background-color: yellow;
   position: relative;
   border: none;
   top: 37%;
