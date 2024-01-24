@@ -13,7 +13,6 @@ body {
 	height: 610px;
 	background: url('./Nokia1100.png') no-repeat;
 	background-size: contain;
-  border: 2px solid black;
 }
 
 .screen {
@@ -35,51 +34,52 @@ body {
   height: 80px;
   width: 60px;
   background-color: black;
-  position: absolute;
+  position: relative;
   border: none;
-  top: 53%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 180px;
+  left: 100px;
 }
 
 .top {
   height: 40px;
   width: 70px;
   background-color: green;
-  position: absolute;
+  position: relative;
   border: none;
-  top: 65%;
-  left: 48%;
+  top: 37%;
+  left: 27%;
+  transform: translateX(-50%);
 }
 
 .down {
   height: 40px;
   width: 70px;
   background-color: blue;
-  position: absolute;
+  position: relative;
   border: none;
-  top: 75%;
-  left: 48%;
+  top: 51%;
+  transform: translateX(-50%);
 }
 
 .right {
   height: 40px;
   width: 60px;
   background-color: pink;
-  position: absolute;
+  position: relative;
   border: none;
-  top: 70%;
-  left: 52%;
+  top: 44%;
+  transform: translateX(-50%);
 }
 
 .left {
   height: 40px;
   width: 60px;
   background-color: yellow;
-  position: absolute;
+  position: relative;
   border: none;
-  top: 70%;
-  left: 43%;
+  top: 37%;
+  left: 23%;
+  transform: translateX(-50%);
 }
 
 .playzone {
