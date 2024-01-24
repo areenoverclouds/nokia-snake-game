@@ -35,9 +35,9 @@ body {
   height: 80px;
   width: 60px;
   background-color: black;
-  position: relative;
+  position: absolute;
   border: none;
-  top: 30%;
+  top: 53%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -46,42 +46,40 @@ body {
   height: 40px;
   width: 70px;
   background-color: green;
-  position: relative;
+  position: absolute;
   border: none;
-  top: 37%;
-  left: 27%;
-  transform: translateX(-50%);
+  top: 65%;
+  left: 48%;
 }
 
 .down {
   height: 40px;
   width: 70px;
   background-color: blue;
-  position: relative;
+  position: absolute;
   border: none;
-  top: 51%;
-  transform: translateX(-50%);
+  top: 75%;
+  left: 48%;
 }
 
 .right {
   height: 40px;
   width: 60px;
   background-color: pink;
-  position: relative;
+  position: absolute;
   border: none;
-  top: 44%;
-  transform: translateX(-50%);
+  top: 70%;
+  left: 52%;
 }
 
 .left {
   height: 40px;
   width: 60px;
   background-color: yellow;
-  position: relative;
+  position: absolute;
   border: none;
-  top: 37%;
-  left: 23%;
-  transform: translateX(-50%);
+  top: 70%;
+  left: 43%;
 }
 
 .playzone {
