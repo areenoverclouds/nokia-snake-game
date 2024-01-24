@@ -28,12 +28,15 @@ body {
 	box-sizing: border-box;
 	padding: 12px 12px 10px 10px;
   font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .space {
   height: 80px;
   width: 60px;
-  background-color: black;
+  background-color: transparent;
   position: relative;
   border: none;
   top: 180px;
@@ -43,7 +46,7 @@ body {
 .top {
   height: 40px;
   width: 70px;
-  background-color: green;
+  background-color: transparent;
   position: relative;
   border: none;
   top: 230px;
@@ -53,7 +56,7 @@ body {
 .down {
   height: 40px;
   width: 70px;
-  background-color: blue;
+  background-color: transparent;
   position: relative;
   border: none;
   top: 310px;
@@ -63,7 +66,7 @@ body {
 .right {
   height: 40px;
   width: 60px;
-  background-color: pink;
+  background-color: transparent;
   position: relative;
   border: none;
   top: 270px;
@@ -73,22 +76,26 @@ body {
 .left {
   height: 40px;
   width: 60px;
-  background-color: yellow;
+  background-color: transparent;
   position: relative;
   border: none;
   top: 225px;
   left: 30px;
 }
 
+.playarea {
+  height: 98%;
+  width: 98%;
+  border: 1px solid #111;
+  padding: 2px;
+}
+
 .playzone {
-  height: 99%;
-  width: 99%;
   display: grid;
   grid-template-columns: repeat(18, 8px);
   grid-template-rows: repeat(12, 8px);
   width: max-content;
   gap: 1px;
-  border: 1px solid #111;
 }
 
 .score {
@@ -103,6 +110,7 @@ body {
 
 .food {
   background-color: red;
+  transform: rotate(45deg);
 }
 
 .snake {
@@ -111,5 +119,8 @@ body {
 
 .snake-head {
   background-color: black;
-  border-radius: 2px 2px 0 0;
+}
+
+.game-over {
+  background-color: pink;
 }

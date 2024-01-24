@@ -10,6 +10,7 @@ export default function Game (props) {
     const [food, setFood] = React.useState({ x: 5, y: 5 });
     const [snake, setSnake] = React.useState(snakeIntialPosition);
     const [direction, setDirection] = React.useState("RIGHT");
+    const [over, setOver] = React.useState(false);
    
     const renderPlayzone = () => {
         let cellArray = [];
@@ -25,13 +26,21 @@ export default function Game (props) {
                 }
               
                 if (isSnake) {
-                    classes = `${classes} snake`;
+                    if(over) {
+                        classes = `${classes} game-over`;
+                    } else {
+                        classes = `${classes} snake`;
+                    }
                 }
               
                 if (isSnakeHead) {
-                    classes = `${classes} snake-head`;
+                    if(over) {
+                        classes = `${classes} game-over`;
+                    } else {
+                        classes = `${classes} snake-head`;
+                    }
                 }
-              
+
                 let cell = <div key={`${r}-${c}`} className={classes}></div>;
               
                 cellArray.push(cell);
@@ -43,17 +52,16 @@ export default function Game (props) {
     function renderFood() {
         let randomX = Math.floor(Math.random() * rows);
         let randomY = Math.floor(Math.random() * cols);
-    
         setFood({
             x: randomX,
             y: randomY,
         });
     }
     
-    function gameOver() {
-        setSnake(snakeIntialPosition);
-        setScore(0);
-        props.endGame();
+    function gameOver(posx, posy) {
+        let newSnake = [{x: posx, y: posy}, {x: posx, y: posy}];
+        setSnake(newSnake);
+        setOver(prev => true);        
     }
     
     function updateGame() {
@@ -64,7 +72,7 @@ export default function Game (props) {
         const isBit = snake.slice(1).some((ele) => ele.x === snake[0].x && ele.y === snake[0].y);
         
         if (isBit) {
-            gameOver();
+            gameOver(snake[0].x, snake[0].y);
             return;
         }
     
@@ -125,8 +133,13 @@ export default function Game (props) {
     return (
         <>
             <div className='screen'>
-                <div className='playzone'>
-                    {renderPlayzone()}
+                <div className='playarea'>
+                    {!over && <div className='playzone'> {renderPlayzone()} </div> }
+                    {over && <>
+                            <div> Game Over </div>
+                            <div> Final Score: {score}  </div>
+                        </>
+                    }
                 </div>
             </div>
             <button className='space'></button>

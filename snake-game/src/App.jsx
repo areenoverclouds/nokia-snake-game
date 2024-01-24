@@ -14,18 +14,6 @@ export default function App() {
   }
   const handleKeyPress = (e) => {
     switch (e.key) {
-      /*case 'ArrowLeft':
-        console.log('Left arrow key pressed!');
-        break;
-      case 'ArrowRight':
-        console.log('Right arrow key pressed!');
-        break;
-      case 'ArrowUp':
-        console.log('Up arrow key pressed!');
-        break;
-      case 'ArrowDown':
-        console.log('Down arrow key pressed!');
-        break;*/
       case ' ':
       case 'Spacebar':
         console.log('Spacebar key pressed!');
