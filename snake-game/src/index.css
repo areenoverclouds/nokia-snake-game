@@ -15,24 +15,6 @@ body {
 	background-size: contain;
 }
 
-.screen {
-  position: relative;
-	left: 50%;
-  top: 24%;
-	transform: translateX(-50%);
-	width: 182px;
-	height: 135px;
-	background: rgb(31, 106, 31);
-	border-radius: 5% / 50%;
-	box-shadow: inset -3px 3px 3px rgba(0, 0, 0, 0.15);
-	box-sizing: border-box;
-	padding: 12px 12px 10px 10px;
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .space {
   height: 80px;
   width: 60px;
@@ -41,6 +23,26 @@ body {
   border: none;
   top: 180px;
   left: 100px;
+}
+
+.upar {
+  height: 40px;
+  width: 60px;
+  background-color: transparent;
+  position: relative;
+  border: none;
+  top: 140px;
+  left: 102px;
+}
+
+.neeche {
+  height: 40px;
+  width: 60px;
+  background-color: transparent;
+  position: relative;
+  border: none;
+  top: 180px;
+  left: 42px;
 }
 
 .top {
@@ -83,9 +85,26 @@ body {
   left: 30px;
 }
 
+.screen {
+  position: relative;
+	left: 50%;
+  top: 24%;
+	transform: translateX(-50%);
+	width: 182px;
+	height: 135px;
+	background: rgb(66, 168, 66);
+	border-radius: 5% / 50%;
+	box-shadow: inset -3px 3px 3px rgba(0, 0, 0, 0.15);
+	box-sizing: border-box;
+	padding: 12px 12px 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .playarea {
-  height: 98%;
-  width: 98%;
+  height: 99%;
+  width: 99%;
   border: 1px solid #111;
   padding: 2px;
 }
@@ -123,4 +142,47 @@ body {
 
 .game-over {
   background-color: pink;
+}
+
+.menu {
+  height: 100%;
+  width: 100%;
+}
+
+.snake-game-text {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 550;
+  font-family: 'Arial', sans-serif;
+}
+
+.new-game-text {
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.new-game-text-selected {
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #111;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.settings-text {
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.settings-text-selected {
+  font-size: 14px;
+  text-align: center;
+  background-color: #111;
+  color: white;
+  font-family: 'Arial', sans-serif;
 }

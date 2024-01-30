@@ -59,9 +59,9 @@ export default function Game (props) {
     }
     
     function gameOver(posx, posy) {
-        let newSnake = [{x: posx, y: posy}, {x: posx, y: posy}];
-        setSnake(newSnake);
-        setOver(prev => true);        
+        //let newSnake = [{x: posx, y: posy}, {x: posx, y: posy}];
+        //setSnake(newSnake);
+        //setOver(prev => true);        
     }
     
     function updateGame() {
@@ -135,10 +135,10 @@ export default function Game (props) {
             <div className='screen'>
                 <div className='playarea'>
                     {!over && <div className='playzone'> {renderPlayzone()} </div> }
-                    {over && <>
+                    {over && <div className='menu'>
                             <div> Game Over </div>
                             <div> Final Score: {score}  </div>
-                        </>
+                        </div>
                     }
                 </div>
             </div>
