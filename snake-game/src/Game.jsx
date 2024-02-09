@@ -27,7 +27,7 @@ export default function Game (props) {
               
                 if (isSnake) {
                     if(over) {
-                        classes = `${classes} game-over`;
+                        classes = `${classes} game-over-snake`;
                     } else {
                         classes = `${classes} snake`;
                     }
@@ -35,7 +35,7 @@ export default function Game (props) {
               
                 if (isSnakeHead) {
                     if(over) {
-                        classes = `${classes} game-over`;
+                        classes = `${classes} game-over-snake-head`;
                     } else {
                         classes = `${classes} snake-head`;
                     }
@@ -57,11 +57,11 @@ export default function Game (props) {
             y: randomY,
         });
     }
-    
-    function gameOver(posx, posy) {
-        //let newSnake = [{x: posx, y: posy}, {x: posx, y: posy}];
-        //setSnake(newSnake);
-        //setOver(prev => true);        
+
+    function gameOver()  {
+        setOver(prev => true); 
+        console.log('game over fxn')
+        props.endGame();
     }
     
     function updateGame() {
@@ -72,7 +72,7 @@ export default function Game (props) {
         const isBit = snake.slice(1).some((ele) => ele.x === snake[0].x && ele.y === snake[0].y);
         
         if (isBit) {
-            gameOver(snake[0].x, snake[0].y);
+            gameOver();
             return;
         }
     
@@ -117,12 +117,19 @@ export default function Game (props) {
             case "ArrowRight":
                 if (direction !== "LEFT") setDirection("RIGHT");
                 break;
+            case 'space':
+            case ' ':
+            case 'Spacebar':
+                console.log('space from game')
+                props.restartGame();
         }
     }
 
     React.useEffect(() => {
-        let moveSnake = setInterval(updateGame, 150);
-        return () => clearInterval(moveSnake);
+        if(!over) {
+            let moveSnake = setInterval(updateGame, 150);
+            return () => clearInterval(moveSnake);
+        }
     });
     
     React.useEffect(() => {
@@ -134,15 +141,16 @@ export default function Game (props) {
         <>
             <div className='screen'>
                 <div className='playarea'>
-                    {!over && <div className='playzone'> {renderPlayzone()} </div> }
-                    {over && <div className='menu'>
-                            <div> Game Over </div>
-                            <div> Final Score: {score}  </div>
+                    <div className='playzone'> {renderPlayzone()} </div>
+                    {over && <div className="menu">
+                            <div className='game-over-text'> Game Over </div>
+                            <div className='final-score-text'> Final Score: {score * 10}  </div>
+                            <div className='ok-text'> OK </div>
                         </div>
                     }
                 </div>
             </div>
-            <button className='space'></button>
+            <button id="Spacebar" className='space' onClick={updateDirection}></button>
             <button id="ArrowUp" className='top' onClick={updateDirection}></button>
             <button id="ArrowDown" className='down' onClick={updateDirection}></button>
             <button id="ArrowRight" className='right' onClick={updateDirection}></button>
