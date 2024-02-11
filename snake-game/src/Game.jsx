@@ -127,7 +127,14 @@ export default function Game (props) {
 
     React.useEffect(() => {
         if(!over) {
-            let moveSnake = setInterval(updateGame, 150);
+            let moveSpeed = 150;
+            switch (props.speed) {
+                case 0: moveSpeed = 240; break;
+                case 1: moveSpeed = 150; break;
+                case 2: moveSpeed = 100; break;
+                case 3: moveSpeed = 60; break;
+            }
+            let moveSnake = setInterval(updateGame, moveSpeed);
             return () => clearInterval(moveSnake);
         }
     });

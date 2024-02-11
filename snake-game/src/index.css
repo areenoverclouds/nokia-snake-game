@@ -90,7 +90,7 @@ body {
 	left: 50%;
   top: 24%;
 	transform: translateX(-50%);
-	width: 182px;
+	width: 185px;
 	height: 135px;
 	background: rgb(66, 168, 66);
 	border-radius: 5% / 50%;
@@ -103,10 +103,12 @@ body {
 }
 
 .playarea {
-  height: 99%;
-  width: 99%;
+  width: 182px;
+	height: 110px;
   border: 1px solid #111;
-  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .playzone {

@@ -1,14 +1,16 @@
 import React from 'react';
 import './index.css';
 import Game from './Game';
-import Menu from './Menu';
 
 export default function App() {
+
+  const levels = ['easy', 'moderate', 'hard', 'very hard'];
 
   const [game, setGame] = React.useState(false);
   const [selected, setSelected] = React.useState('new-game');
   const [menu, setMenu] = React.useState(false);
   const [over, setOver] = React.useState(false);
+  const [difficulty, setDifficulty] = React.useState(1);
 
   const startGame = () => {
     setGame(true);
@@ -26,8 +28,11 @@ export default function App() {
     setSelected('new-game');
   }
 
-  const toggleMenu = () => {
-    setMenu(prev => !prev);
+  const changeDifficulty = () => {
+    let i = difficulty;
+    i++;
+    if(i >= 4) i = 0;
+    setDifficulty(i);
   }
 
   const handleKeyPress = (e) => {
@@ -38,7 +43,7 @@ export default function App() {
       case 'Spacebar':
         console.log(game, over, menu, selected)
         if(!game && !menu && !over) {
-          selected === 'new-game' ? startGame() : toggleMenu();
+          selected === 'new-game' ? startGame() : changeDifficulty();
         } else if(over) {
           restartGame();
         }
@@ -55,15 +60,14 @@ export default function App() {
 
   return (
     <div className='nokia'>
-      {game && <Game endGame={endGame} restartGame={restartGame}/>}
-      {/*menu && <Menu />*/}
+      {game && <Game endGame={endGame} restartGame={restartGame} speed={difficulty}/>}
       {!game && !menu && 
         <>
           <div className='screen'>
              <div className='start-menu'>
                 <div className='snake-game-text'> S N A K E </div>
                 <div className={selected === 'new-game' ? 'new-game-text-selected' : 'new-game-text'}> New Game </div>
-                {<div className={selected === 'settings' ? 'settings-text-selected' : 'settings-text'}> Settings </div>}
+                <div className={selected === 'settings' ? 'settings-text-selected' : 'settings-text'}> Difficulty: {levels[difficulty]} </div>
               </div>
           </div>
           <button id='space' className='space' onClick={handleKeyPress}></button>
