@@ -65,7 +65,7 @@ export default function Game (props) {
     }
     
     function updateGame() {
-        if ( snake[0].x < 0 || snake[0].x > rows || snake[0].y < 0 || snake[0].y > cols) {
+        if (snake[0].x < 0 || snake[0].x >= rows || snake[0].y < 0 || snake[0].y >= cols) {
             gameOver();
             return;
         }
